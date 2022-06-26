@@ -18,7 +18,8 @@ fn main() {
         let start = ((value / 255.0) * len).round() as usize;
         let end = start + 1;
 
-        chars[row as usize][column as usize] = String::from(&charset[start..end]);
+        let ansi = format!("\x1b[38;2;{};{};{}m", pixel.0[0], pixel.0[1], pixel.0[2]);
+        chars[row as usize][column as usize] = format!("{}{}", ansi, &charset[start..end]);
     }
 
     for row in 0..height {
@@ -30,4 +31,6 @@ fn main() {
 
         println!();
     }
+
+    println!("\x1b[0m");
 }
