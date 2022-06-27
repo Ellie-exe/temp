@@ -25,12 +25,12 @@ fn main() {
     for row in 0..height {
         if row % 2 != 0 { continue; }
 
+        println!();
+
         for column in 0..width {
             print!("{}", chars[row][column]);
         }
-
-        println!();
     }
 
-    println!("\x1b[0m");
+    println!("\n\x1b[0m");
 }
