@@ -17,7 +17,6 @@ fn main() {
 
         let rgb_str = format!("{};{};{}", pixel.2[0], pixel.2[1], pixel.2[2]);
         print!("\x1b[1;38;2;{}m{}\x1b[0m", rgb_str, &charset[char..char + 1]);
-
     }
 
     println!("\n");
